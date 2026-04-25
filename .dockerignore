@@ -1,0 +1,16 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.env
+.env.*
+!.env.example
+data/chroma
+data/**/__pycache__
+frontend/node_modules
+*.log
+terminals

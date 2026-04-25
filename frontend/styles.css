@@ -1,0 +1,94 @@
+/* Small style complements that Tailwind doesn't cover inline */
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#chat-input {
+  max-height: 40vh;
+  min-height: 2.75rem;
+  line-height: 1.4;
+}
+
+/* Hide scrollbar track but keep scroll in message container */
+#messages {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+/* Markdown rendering nudges */
+.answer pre {
+  overflow-x: auto;
+  white-space: pre;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.8125rem;
+}
+.dark .answer pre {
+  background: rgba(148, 163, 184, 0.1);
+}
+.answer code {
+  font-size: 0.85em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.35rem;
+  background: rgba(15, 23, 42, 0.06);
+}
+.dark .answer code {
+  background: rgba(148, 163, 184, 0.15);
+}
+.answer ul, .answer ol {
+  padding-left: 1.25rem;
+}
+.answer p + p {
+  margin-top: 0.65rem;
+}
+
+.agent-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+.badge-product   { background: #eef2ff; color: #3730a3; border-color: #c7d2fe; }
+.badge-policy    { background: #ecfeff; color: #155e75; border-color: #a5f3fc; }
+.badge-tech      { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+.badge-general   { background: #f1f5f9; color: #334155; border-color: #e2e8f0; }
+
+@media (prefers-color-scheme: dark) {
+  .badge-product { background: rgba(99,102,241,.15); color: #c7d2fe; border-color: rgba(99,102,241,.35); }
+  .badge-policy  { background: rgba(14,165,233,.15); color: #bae6fd; border-color: rgba(14,165,233,.35); }
+  .badge-tech    { background: rgba(234,179,8,.15);  color: #fde68a; border-color: rgba(234,179,8,.35); }
+  .badge-general { background: rgba(148,163,184,.15); color: #e2e8f0; border-color: rgba(148,163,184,.35); }
+}
+
+.specialist-card {
+  border: 1px solid rgb(226 232 240);
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.8rem;
+  background: rgba(255,255,255,0.6);
+}
+.dark .specialist-card {
+  border-color: rgb(30 41 59);
+  background: rgba(15,23,42,0.5);
+}
+.specialist-card h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.specialist-card .body {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: rgb(51 65 85);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.dark .specialist-card .body {
+  color: rgb(203 213 225);
+}
